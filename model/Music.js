@@ -9,9 +9,13 @@ const musicSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    songName: {
+        type: String
+    },
     intro: {
         type: String
     },
+
     popular: Boolean,
 
     public_Id_song: {

@@ -26,6 +26,7 @@ export default class MusicController {
                 artistName: req.body.artistName,
                 song: audioFile.url,
                 intro: introFile.url,
+                songName: req.body.songName,
                 profile: profileFile.url,
                 popular: req.body.popular,
                 public_Id_song: audioFile.public_id,
@@ -75,11 +76,11 @@ export default class MusicController {
     // for the Getting Single Song
     singleMusic = async (req, res) => {
         const id = req.params.id;
-        try{
+        try {
             const music = await Music.findById(id);
-            return res.json({Music:music})
-        }catch(err){
-            console.log("There is Problem With Getting Song ",err);
+            return res.json({ Music: music })
+        } catch (err) {
+            console.log("There is Problem With Getting Song ", err);
             return;
         }
     }
