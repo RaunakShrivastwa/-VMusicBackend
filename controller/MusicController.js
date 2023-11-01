@@ -84,4 +84,15 @@ export default class MusicController {
             return;
         }
     }
+
+    //  for the Getting recent upload All Songs
+    recentData = async (req, res) => {
+        try {
+            const music = await Music.find({}).sort('-createdAt')
+            return res.json({ AllMusics: music })
+        } catch (err) {
+            console.log("There is Error ", err);
+            return;
+        }
+    }
 }

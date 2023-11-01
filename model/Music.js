@@ -33,7 +33,7 @@ const musicSchema = new mongoose.Schema({
     }
 
 
-});
+}, { timestamps: true });
 
 const Music = mongoose.model('Music', musicSchema);
 
